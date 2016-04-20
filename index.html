@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Game Iglulabs</title>
+			
+		<style>/* Removes Mobile Highlight */ *{-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}</style>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		
+	<script src="//code.jquery.com/jquery-1.9.1.js"></script>
+	<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+		
+		<script src="http://code.createjs.com/easeljs-0.4.2.min.js"></script>
+		<script src="http://code.createjs.com/tweenjs-0.2.0.min.js"></script>
+		<script src="http://code.createjs.com/soundjs-0.2.0.min.js"></script>
+		<script src="http://code.createjs.com/preloadjs-0.1.0.min.js"></script>
+		<script src="http://code.createjs.com/movieclip-0.4.1.min.js"></script>
+		<script src="assets/soundjs.flashplugin-0.2.0.min.js"></script>
+		
+		<style>
+		
+		.ui-dialog-titlebar-close {
+    display: none !important;
+    }
+    
+    .ui-dialog-buttonpane button {
+    cursor: pointer;
+    margin-left: -210px !important;
+	}
+	
+	.ui-dialog-title {
+    float: left;
+    font-family: helvetica !important;
+    font-size: 20px !important;
+     padding-top: 4px !important;
+     
+    }
+	
+	.ui-dialog-buttonpane button {
+    background: none repeat scroll 0 0 #FFFFFF !important;
+    color: #D15469 !important;
+    cursor: pointer;
+    margin: 0.5em -3.6em -0.5em 0;
+    width: 102px!important;
+}
+	
+	
+	.ui-dialog-title {
+    text-align: center !important;
+    color: #FFFFFF !important;
+    widht:166% !important;
+    }
+    
+    .ui-widget-header {
+    background: none !important;
+    border: 0px solid !important;
+}
+	
+	.ui-dialog-buttonpane {
+    background-image: none;
+    border-width: 0 !important;
+    margin-top: 0.5em;
+    padding: 0.3em 1em 0.5em 0.4em !important;
+    text-align: left;
+    height:45px !important;
+    background: none repeat scroll 0 0 #D2546A !important;
+}
+	.ui-dialog{
+	background: none repeat scroll 0 0 #D2546A !important;
+	
+    left: 340px !important;
+    top: 191.5px !important;
+    width:350px !important;
+    
+	}
+	
+	.ui-dialog-title {
+    margin: 0.1em 0 0.1em -16px !important;
+    width: 110% !important;
+}
+	.ui-widget-overlay {
+	
+	background: none !important;
+	
+	}
+    
+		</style>
+		
+		<script src="Main.js"></script>
+		
+		 <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+		
+	<script type="text/javascript">
+	
+		var level=1;
+		var lives=10;
+		function start(){
+			init(level,lives,function(level1, lives1){
+		        level=level1;
+		        lives=lives1;
+		        if(level<=3){	        	
+		        //	alert(level+":"+lives);
+			        start();
+		        }
+		    });
+		}
+	</script>
+		
+	</head>
+	<body onload="start();">
+	
+		<canvas id="gameStage" width="1024" height="540" style="margin-left:auto;margin-right:auto;margin-top:10px;display:block;" ></canvas>
+		<div id="dialog" title="Try Again" hidden style="height:20px;"></div>
+		<div id="dialog1" title=" Lets Try Again" hidden></div>
+		
+		<div id="dialog-confirm" title="Try Again" hidden>
+<p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>These items will be permanently deleted and cannot be recovered. Are you sure?</p>
+</div>
+
+<div id="dialog-confirm1" title=" Let's Try Again" hidden>
+<p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>These items will be permanently deleted and cannot be recovered. Are you sure?</p>
+</div>
+
+
+
+
+<div id="dialog-confirm5" title="You Win All Level Play Again" hidden>
+<p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>These items will be permanently deleted and cannot be recovered. Are you sure?</p>
+</div>
+
+
+<div id="dialog-confirm6" title="You Lose Play Again" hidden>
+<p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>These items will be permanently deleted and cannot be recovered. Are you sure?</p>
+</div>
+
+
+		 
+	</body>
+</html>
